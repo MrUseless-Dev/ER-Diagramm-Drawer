@@ -138,20 +138,21 @@ paper.on('cell:mouseout', function(evt) {
 //----------------------SCALE-----------------------
 //Scale the paper with Scroll
 paper.on('blank:mousewheel', function(evt, x, y, delta) {
+
     scaleX += delta * SCALE_RESOLUTION;
     scaleY += delta * SCALE_RESOLUTION;
-    if(scaleX < MAX_ZOOM_IN) { 
+    if(scaleX < MAX_SCALE_IN) {
         paper.scale(scaleX, scaleY);
     } else {
-        scaleX = MAX_ZOOM_IN;
-        scaleY = MAX_ZOOM_IN;
+        scaleX = MAX_SCALE_IN;
+        scaleY = MAX_SCALE_IN;
     }
 
-    if(scaleX > MAX_ZOOM_OUT){
+    if(scaleX > MAX_SCALE_OUT){
         paper.scale(scaleX, scaleY);
     } else {
-        scaleX = MAX_ZOOM_OUT;
-        scaleY = MAX_ZOOM_OUT5;
+        scaleX = MAX_SCALE_OUT;
+        scaleY = MAX_SCALE_OUT;
     }
 });
 
